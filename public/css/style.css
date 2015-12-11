@@ -6,3 +6,29 @@ body {
 a {
   color: #00B7FF;
 }
+
+.summery{
+	float: left;
+	width:117px;
+	height:284px;
+	background: url('../images/temp1.jpg')
+}
+
+.summery{
+	font-weight: bold;
+	text-align: center;
+	padding-top:30%;
+	color:#444;
+}
+
+.summery .box{
+	border:3px solid #ffbc11;
+	/*color:#ffbc11;*/
+
+	text-align: center;
+	width:70px;
+	height:70px;
+	border-radius: 50%;
+	line-height: 70px;
+	margin:0 auto;
+}

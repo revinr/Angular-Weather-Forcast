@@ -14,6 +14,9 @@ angular.module('myApp', [])
         .success(function(response) 
         {
           $scope.fdy = response;
+          $scope.minTemp=getStat(response.list).minTemp;
+          $scope.maxTemp=getStat(response.list).maxTemp;
+          $scope.avgTemp=getStat(response.list).avgTemp;
         });
     }
 
@@ -21,6 +24,23 @@ angular.module('myApp', [])
         var city=$scope.cityQuery;
         console.log(city);
         fetch(city);
+    };
+
+    var getStat=function(list){
+      var minTemp=[];
+      var maxTemp=[];
+      var avgTemp=[];
+     for(var i in list){
+        minTemp.push(list[i].main.temp_min);
+        maxTemp.push(list[i].main.temp_max);
+        avgTemp.push(list[i].main.temp);
+      }
+      var mnt=_.min(minTemp);
+      var mxt=_.max(maxTemp);
+      var sum=_.sum(avgTemp);
+      var count=avgTemp.length;
+      var avg=(sum/count).toFixed(2);
+      return {minTemp:mnt,maxTemp:mxt,avgTemp:avg};
     };
 
   })
