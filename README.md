@@ -1,5 +1,6 @@
 # Angular-Weather-Forcast
 Sample application using node, angular and openweather api
+##author:Shamsuddoha Majumder 
 
 ###How to install
  1. install node js
